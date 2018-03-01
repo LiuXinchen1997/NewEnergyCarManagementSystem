@@ -1,6 +1,10 @@
 *.iml
-.gradle
 .idea
+.gradle
+<<<<<<< HEAD
+.idea
+=======
+>>>>>>> c1b88ae3a2e0b85e9c9c1b4bf3fd71d1fad246ee
 /build.gradle
 /app/build.gradle
 /local.properties
