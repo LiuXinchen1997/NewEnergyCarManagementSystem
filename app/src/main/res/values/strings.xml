@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">test</string>
+    <string name="app_name">新能源物流车管理平台</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">账号</string>
@@ -13,13 +13,13 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">主界面</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-    <string name="title_activity_person">person</string>
+    <string name="title_activity_person">个人信息</string>
     <string name="title_activity_battery">battery</string>
     <string name="title_activity_text">电池信息</string>
     <string name="large_text">

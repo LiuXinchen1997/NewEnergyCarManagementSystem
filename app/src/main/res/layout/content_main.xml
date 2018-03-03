@@ -14,7 +14,6 @@
     tools:showIn="@layout/app_bar_main">
 
     <TextView
-        
         android:layout_width="250dp"
         android:layout_height="200dp"
         android:id="@+id/textView2"
@@ -22,5 +21,5 @@
         android:layout_centerHorizontal="true"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:text="欢迎使用物流车管理平台"/>
+        android:text="欢迎使用新能源物流车管理平台"/>
 </RelativeLayout>

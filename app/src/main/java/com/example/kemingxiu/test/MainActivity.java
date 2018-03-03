@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -62,9 +63,6 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
@@ -81,23 +79,25 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-            Intent intent = new Intent(MainActivity.this,person.class);
+        if (id == R.id.nav_personal_info) {
+            Intent intent = new Intent(MainActivity.this, PersonInfoActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_gallery) {
-            Intent intent = new Intent(MainActivity.this,text.class);
+        } else if (id == R.id.nav_battery) {
+            Intent intent = new Intent(MainActivity.this, text.class);
             startActivity(intent);
-        } else if (id == R.id.nav_slideshow) {
-            Intent intent = new Intent(MainActivity.this,person.class);
+        } else if (id == R.id.nav_car) {
+            Intent intent = new Intent(MainActivity.this, PersonInfoActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_manage) {
-            Intent intent = new Intent(MainActivity.this,person.class);
+        } else if (id == R.id.nav_person) {
+            Intent intent = new Intent(MainActivity.this, PersonInfoActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_send) {
-            Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+        } else if (id == R.id.nav_setting) {
+
+        } else if (id == R.id.nav_logout) {
+            Toast.makeText(this, "退出成功！", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(intent);
         }
 

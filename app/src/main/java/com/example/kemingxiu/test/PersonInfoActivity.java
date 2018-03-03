@@ -9,12 +9,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
-public class person extends AppCompatActivity {
+public class PersonInfoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_person);
+        setContentView(R.layout.activity_personal_info);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -31,7 +31,7 @@ public class person extends AppCompatActivity {
         exitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(person.this,LoginActivity.class);
+                Intent intent = new Intent(PersonInfoActivity.this,LoginActivity.class);
                 startActivity(intent);
             }
         });
