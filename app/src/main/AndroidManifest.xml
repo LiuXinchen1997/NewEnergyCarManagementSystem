@@ -29,11 +29,7 @@
             android:label="@string/title_activity_person"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".battery"
-            android:label="@string/title_activity_battery"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".text"
+            android:name=".BatteryActivity"
             android:label="@string/title_activity_text"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>

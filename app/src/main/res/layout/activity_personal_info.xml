@@ -21,7 +21,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_person" />
+    <include layout="@layout/content_personal_info" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
