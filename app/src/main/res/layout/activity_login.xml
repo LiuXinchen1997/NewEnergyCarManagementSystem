@@ -15,7 +15,7 @@
         android:layout_height="100dp"
         android:layout_gravity="center_vertical"
         android:textSize="20sp"
-        android:textColor="#feef86"
+        android:textColor="#000000"
         android:text="城市物流车管理平台"/>
     <!-- Login progress -->
     <ProgressBar

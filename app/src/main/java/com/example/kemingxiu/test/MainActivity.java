@@ -80,21 +80,22 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_personal_info) {
-            Intent intent = new Intent(MainActivity.this, PersonInfoActivity.class);
+            Intent intent = new Intent(MainActivity.this, PersonalInfoActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_battery) {
             Intent intent = new Intent(MainActivity.this, BatteryActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_car) {
-            Intent intent = new Intent(MainActivity.this, PersonInfoActivity.class);
+            Intent intent = new Intent(MainActivity.this, CarActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_person) {
-            Intent intent = new Intent(MainActivity.this, PersonInfoActivity.class);
+            Intent intent = new Intent(MainActivity.this, PersonActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_share) {
-
+            Toast.makeText(this, "分享成功！", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_setting) {
-
+            Intent intent = new Intent(MainActivity.this, SettingActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_logout) {
             Toast.makeText(this, "退出成功！", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
