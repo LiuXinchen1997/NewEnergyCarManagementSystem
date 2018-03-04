@@ -14,4 +14,24 @@
         android:layout_margin="@dimen/text_margin"
         android:text="@string/large_text" />
 
+    <ListView
+        android:id="@+id/battery_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </android.support.v4.widget.NestedScrollView>
+
+
+
+<!--
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ListView
+        android:id="@+id/battery_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
+-->

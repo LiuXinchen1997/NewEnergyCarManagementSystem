@@ -27,17 +27,23 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".PersonalInfoActivity"
-            android:label="@string/title_activity_person"
+            android:label="@string/title_activity_personal_info"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".BatteryActivity"
-            android:label="@string/title_activity_text"
+            android:label="@string/title_activity_battery"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".CarActivity" />
-        <activity android:name=".PersonActivity" />
         <activity
             android:name=".SettingActivity"
             android:label="@string/title_activity_setting"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CarActivity"
+            android:label="@string/title_activity_car"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PersonActivity"
+            android:label="@string/title_activity_person"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
