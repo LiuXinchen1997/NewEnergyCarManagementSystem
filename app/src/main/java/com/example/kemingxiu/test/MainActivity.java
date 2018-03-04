@@ -92,6 +92,8 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(MainActivity.this, PersonActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_share) {
+            Intent intent = new Intent(MainActivity.this, DemoActivity.class);
+            startActivity(intent);
             Toast.makeText(this, "分享成功！", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_setting) {
             Intent intent = new Intent(MainActivity.this, SettingActivity.class);
