@@ -79,6 +79,12 @@ public class Driver {
     }
 
     public Driver() {
+        this.driverNum = null;
+        this.motorcadeNum = null;
+        this.carNum = null;
+        this.driverName = null;
+        this.driverPhone = null;
+        this.driverPosition = null;
     }
 
     public Driver(int driverId, String driverNum, String motorcadeNum, String carNum, String driverName, int driverSex, String driverPhone, String driverPosition) {
