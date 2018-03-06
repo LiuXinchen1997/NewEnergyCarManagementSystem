@@ -8,10 +8,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
-import com.nev.dao.MyDatabaseHelper;
+import com.nev.dao.DatabaseBuildHelper;
 
 public class CarActivity extends AppCompatActivity {
-    private MyDatabaseHelper dbHelper;
+    private DatabaseBuildHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,16 +28,5 @@ public class CarActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
-        dbHelper = new MyDatabaseHelper(this, "nev.db", null, 1);
-
-        Button button = findViewById(R.id.table_button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dbHelper.getWritableDatabase();
-            }
-        });
     }
-
 }

@@ -8,10 +8,4 @@
     tools:context="com.example.kemingxiu.test.CarActivity"
     tools:showIn="@layout/activity_car">
 
-    <Button
-        android:id="@+id/table_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="add table" />
-
 </android.support.constraint.ConstraintLayout>

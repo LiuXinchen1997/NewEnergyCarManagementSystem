@@ -7,7 +7,7 @@ import android.widget.Toast;
 
 import static com.nev.utils.Sqls.*;
 
-public class MyDatabaseHelper extends SQLiteOpenHelper {
+public class DatabaseBuildHelper extends SQLiteOpenHelper {
     private String[] sqls = { CAR_INFO, CAR_STATUS, CAR_LOCATION, CAR_MILE,
             CAR_SPEED, CAR_WARNING, CAR_PECCANCY, CAR_COLLISION,CAR_OVERSPEED,
             CAR_OVERLOAD, CAR_GUARANTEE, CAR_SOC, BATTERY_INFO, BATTERY_WARNING,
@@ -17,8 +17,8 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     private Context mContext;
 
-    public MyDatabaseHelper(Context context, String name,
-                            SQLiteDatabase.CursorFactory factory, int version) {
+    public DatabaseBuildHelper(Context context, String name,
+                               SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
         mContext = context;
     }
