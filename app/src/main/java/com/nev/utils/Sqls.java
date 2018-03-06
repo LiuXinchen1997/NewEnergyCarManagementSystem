@@ -190,7 +190,7 @@ public class Sqls {
             ");";
 
     public static final String CAR_TEAM_INFO = "CREATE TABLE `carTeamInfo`(\n" +
-            "  `motorcadeId` integer PRIMARY KEY auto_increment,\n" +
+            "  `motorcadeId` integer PRIMARY KEY autoincrement,\n" +
             "  `motorcadeNum` text NOT NULL,\n" +
             "  `captainNum` text NOT NULL,\n" +
             "  `motorcadeMount` integer NOT NULL\n" +
