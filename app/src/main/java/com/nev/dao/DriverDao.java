@@ -92,7 +92,6 @@ public class DriverDao {
         }
     }
 
-    // 未完成！！！
     public static List<Driver> findAll(SQLiteDatabase db) {
         List<Driver> list = new LinkedList<>();
         Cursor cursor = db.query(TABLE, null, null, null, null, null, null);
@@ -102,6 +101,12 @@ public class DriverDao {
                 d.setDriverId(cursor.getInt(cursor.getColumnIndex("driverId")));
                 d.setDriverPosition(cursor.getString(cursor.getColumnIndex("driverPosition")));
                 d.setDriverPhone(cursor.getString(cursor.getColumnIndex("driverPhone")));
+                d.setCarNum(cursor.getString(cursor.getColumnIndex("carNum")));
+                d.setDriverName(cursor.getString(cursor.getColumnIndex("driverName")));
+                d.setDriverSex(cursor.getInt(cursor.getColumnIndex("driverSex")));
+                d.setDriverNum(cursor.getString(cursor.getColumnIndex("driverNum")));
+                d.setMotorcadeNum(cursor.getString(cursor.getColumnIndex("motorcadeNum")));
+                list.add(d);
             } while (cursor.moveToNext());
         }
         cursor.close();
