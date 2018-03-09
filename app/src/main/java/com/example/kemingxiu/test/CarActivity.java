@@ -51,7 +51,7 @@ public class CarActivity extends AppCompatActivity {
                 SQLiteDatabase db = dbHelper.getWritableDatabase();
                 // DriverDao.getInstance().insertARecord(d, db);
 
-                List<Driver> list = DriverDao.getInstance().findAll(db);
+                List<Driver> list = DriverDao.getInstance().findBySelection(db, "where driverId = ?", new String[] {"1"});
                 for (Driver driver : list) {
                     Log.e(TAG, driver+"");
                 }

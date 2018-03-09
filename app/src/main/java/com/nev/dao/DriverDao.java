@@ -113,4 +113,27 @@ public class DriverDao {
 
         return list;
     }
+
+    public static List<Driver> findBySelection(SQLiteDatabase db, String selection, String[] args) {
+        List<Driver> list = null;
+        Cursor cursor = db.query(TABLE, null, selection, args, null, null, null);
+        if (cursor.moveToFirst()) {
+            list = new LinkedList<>();
+            do {
+                Driver d = new Driver();
+                d.setDriverId(cursor.getInt(cursor.getColumnIndex("driverId")));
+                d.setDriverPosition(cursor.getString(cursor.getColumnIndex("driverPosition")));
+                d.setDriverPhone(cursor.getString(cursor.getColumnIndex("driverPhone")));
+                d.setCarNum(cursor.getString(cursor.getColumnIndex("carNum")));
+                d.setDriverName(cursor.getString(cursor.getColumnIndex("driverName")));
+                d.setDriverSex(cursor.getInt(cursor.getColumnIndex("driverSex")));
+                d.setDriverNum(cursor.getString(cursor.getColumnIndex("driverNum")));
+                d.setMotorcadeNum(cursor.getString(cursor.getColumnIndex("motorcadeNum")));
+                list.add(d);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+
+        return list;
+    }
 }
