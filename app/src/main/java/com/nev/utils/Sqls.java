@@ -13,7 +13,7 @@ public class Sqls {
             "  `driverNum` integer NOT NULL\n" +
             ");";
 
-    public static final String CAR_STATUS = "CREATE TABLE `carStatus`(\n" +
+    public static final String CAR_STATUS = "CREATE TABLE `CarStatusDao`(\n" +
             "  `carSId` integer PRIMARY KEY autoincrement,\n" +
             "  `carNum` text NOT NULL,\n" +
             "  `carLoca` text NOT NULL,\n" +
