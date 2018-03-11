@@ -45,18 +45,16 @@
         android:id="@+id/location"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="查看当前位置"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="60dp" />
+        android:text="查看位置" />
 
     <ListView
         android:id="@+id/list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/imageView2"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageView2"
+        android:background="@android:color/background_light" />
 
 </RelativeLayout>

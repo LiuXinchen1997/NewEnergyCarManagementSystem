@@ -69,11 +69,11 @@
         <activity android:name=".CarList" />
         <activity
             android:name=".Information"
-            android:label="司机信息"
+            android:label="车辆信息"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Carposition"
-            android:label="位置"
+            android:label="车辆位置"
             android:theme="@style/AppTheme.NoActionBar" />
 
     </application>

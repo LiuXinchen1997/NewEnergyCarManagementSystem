@@ -94,4 +94,16 @@ public class CarDao {
 
         return null;
     }
+
+    public static List<CarInfo> findByCarTeam(SQLiteDatabase db, String carTeamNum) {
+        List<CarInfo> cars = findAll(db);
+        List<CarInfo> selected_cars = new LinkedList<>();
+        for (CarInfo car : cars) {
+            if (car.getMotorcadeNum().equals(carTeamNum)) {
+                selected_cars.add(car);
+            }
+        }
+
+        return selected_cars;
+    }
 }
