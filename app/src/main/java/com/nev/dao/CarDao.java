@@ -83,4 +83,15 @@ public class CarDao {
 
         return list;
     }
+
+    public static Car findByCarNum(SQLiteDatabase db, String carNum) {
+        List<Car> cars = findAll(db);
+        for (Car c : cars) {
+            if (c.getCarNum().equals(carNum)) {
+                return c;
+            }
+        }
+
+        return null;
+    }
 }
