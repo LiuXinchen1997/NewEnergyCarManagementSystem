@@ -190,11 +190,19 @@ CREATE TABLE `driverInfo`(
   `motorcadeNum` text NOT NULL,
   `carNum` text NOT NULL,
   `driverName` text NOT NULL,
-  `driverSex` integer NOT NULL,
+  `driverSex` integer NOT NULL, -- 1男0女
   `driverPhone` text NOT NULL,
   `driverPosition` text NOT NULL,
   FOREIGN KEY(carNum) REFERENCES carInfo(carNum)
 );
+
+insert into driverInfo(driverNum,motorcadeNum,carNum,driverName,driverSex,driverPhone,driverPosition)values('001','A001','0001','ZhangSan',1,13677778888,'Nan Jing');
+insert into driverInfo(driverNum,motorcadeNum,carNum,driverName,driverSex,driverPhone,driverPosition)values('002','A002','0002','LiSi',0,13766662222,'Guang Zhou');
+insert into driverInfo(driverNum,motorcadeNum,carNum,driverName,driverSex,driverPhone,driverPosition)values('003','A003','0004','WangWu',1,13877778888,'Chang Sha');
+insert into driverInfo(driverNum,motorcadeNum,carNum,driverName,driverSex,driverPhone,driverPosition)values('004','B001','0007','ZhaoLiu',0,13722228888,'He Fei');
+insert into driverInfo(driverNum,motorcadeNum,carNum,driverName,driverSex,driverPhone,driverPosition)values('005','C001','0008','XiaoQi',1,13677771111,'Shang Hai');
+insert into driverInfo(driverNum,motorcadeNum,carNum,driverName,driverSex,driverPhone,driverPosition)values('006','C002','0011','QianBa',1,13900006666,'Bei Jing');
+
 
 CREATE TABLE `carTeamInfo`(
   `motorcadeId` integer PRIMARY KEY autoincrement,

@@ -4,7 +4,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.nev.domain.Driver;
+import com.nev.domain.DriverInfo;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -25,7 +25,7 @@ public class DriverDao {
         return dao;
     }
 
-    public static void insertARecord(Driver d, SQLiteDatabase db) {
+    public static void insertARecord(DriverInfo d, SQLiteDatabase db) {
         ContentValues values = new ContentValues();
         values.put("driverId", d.getDriverId());
         values.put("driverNum", d.getCarNum());
@@ -39,8 +39,8 @@ public class DriverDao {
         db.insert(TABLE, null, values);
     }
 
-    public static void insertRecords(List<Driver> ds, SQLiteDatabase db) {
-        for (Driver d : ds) {
+    public static void insertRecords(List<DriverInfo> ds, SQLiteDatabase db) {
+        for (DriverInfo d : ds) {
             ContentValues values = new ContentValues();
             values.put("driverId", d.getDriverId());
             values.put("driverNum", d.getCarNum());
@@ -54,7 +54,7 @@ public class DriverDao {
         }
     }
 
-    public static void updateARecord(Driver d, SQLiteDatabase db) {
+    public static void updateARecord(DriverInfo d, SQLiteDatabase db) {
         ContentValues values = new ContentValues();
         values.put("driverId", d.getDriverId());
 
@@ -92,12 +92,12 @@ public class DriverDao {
         }
     }
 
-    public static List<Driver> findAll(SQLiteDatabase db) {
-        List<Driver> list = new LinkedList<>();
+    public static List<DriverInfo> findAll(SQLiteDatabase db) {
+        List<DriverInfo> list = new LinkedList<>();
         Cursor cursor = db.query(TABLE, null, null, null, null, null, null);
         if (cursor.moveToFirst()) {
             do {
-                Driver d = new Driver();
+                DriverInfo d = new DriverInfo();
                 d.setDriverId(cursor.getInt(cursor.getColumnIndex("driverId")));
                 d.setDriverPosition(cursor.getString(cursor.getColumnIndex("driverPosition")));
                 d.setDriverPhone(cursor.getString(cursor.getColumnIndex("driverPhone")));
@@ -114,13 +114,13 @@ public class DriverDao {
         return list;
     }
 
-    public static List<Driver> findBySelection(SQLiteDatabase db, String selection, String[] args) {
-        List<Driver> list = null;
+    public static List<DriverInfo> findBySelection(SQLiteDatabase db, String selection, String[] args) {
+        List<DriverInfo> list = null;
         Cursor cursor = db.query(TABLE, null, selection, args, null, null, null);
         if (cursor.moveToFirst()) {
             list = new LinkedList<>();
             do {
-                Driver d = new Driver();
+                DriverInfo d = new DriverInfo();
                 d.setDriverId(cursor.getInt(cursor.getColumnIndex("driverId")));
                 d.setDriverPosition(cursor.getString(cursor.getColumnIndex("driverPosition")));
                 d.setDriverPhone(cursor.getString(cursor.getColumnIndex("driverPhone")));

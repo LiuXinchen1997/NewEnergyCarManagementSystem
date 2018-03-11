@@ -76,6 +76,12 @@
             android:label="车辆位置"
             android:theme="@style/AppTheme.NoActionBar" />
 
+        <activity android:name=".DriverList" />
+        <activity
+            android:name=".personInformation"
+            android:label="员工详情"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
     </application>
 
 </manifest>

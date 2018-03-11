@@ -4,7 +4,7 @@ package com.nev.domain;
  * Created by Administrator on 2018/3/6.
  */
 
-public class Driver {
+public class DriverInfo {
     private int driverId;
     private String driverNum;
     private String motorcadeNum;
@@ -78,7 +78,7 @@ public class Driver {
         this.driverPosition = driverPosition;
     }
 
-    public Driver() {
+    public DriverInfo() {
         this.driverNum = null;
         this.motorcadeNum = null;
         this.carNum = null;
@@ -87,7 +87,7 @@ public class Driver {
         this.driverPosition = null;
     }
 
-    public Driver(int driverId, String driverNum, String motorcadeNum, String carNum, String driverName, int driverSex, String driverPhone, String driverPosition) {
+    public DriverInfo(int driverId, String driverNum, String motorcadeNum, String carNum, String driverName, int driverSex, String driverPhone, String driverPosition) {
         this.driverId = driverId;
         this.driverNum = driverNum;
         this.motorcadeNum = motorcadeNum;
@@ -100,7 +100,7 @@ public class Driver {
 
     @Override
     public String toString() {
-        return "Driver{" +
+        return "DriverInfo{" +
                 "driverId=" + driverId +
                 ", driverNum='" + driverNum + '\'' +
                 ", motorcadeNum='" + motorcadeNum + '\'' +
