@@ -5,7 +5,9 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.nev.domain.Car;
 import com.nev.domain.CarLocation;
+import com.nev.domain.CarMile;
 import com.nev.domain.Driver;
+import com.nev.utils.StringVal;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -43,9 +45,28 @@ public class CarDao {
                 if (loca != null) {
                     c.setCarLat(loca.getCarLat());
                     c.setCarLng(loca.getCarLng());
+                } else {
+                    c.setCarLat(StringVal.INVALID);
+                    c.setCarLng(StringVal.INVALID);
                 }
 
-                c.setCarLock(CarMileDao.getInstance().isCarLock(db, c.getCarNum()));
+                CarMile mile = CarMileDao.getInstance().findByCarNum(db, c.getCarNum());
+                if (mile != null) {
+                    c.setCarLock(mile.getIsCarLock()==1?true:false);
+                    c.setSeatLock(mile.getIsSeatLock()==1?true:false);
+                    c.setSafetyBelt(mile.getIsSafetyBelt()==1?true:false);
+                    c.setHandBraking(mile.getIsHandBraking()==1?true:false);
+                } else {
+                    c.setCarLock(true);
+                    c.setSeatLock(true);
+                    c.setSafetyBelt(true);
+                    c.setHandBraking(true);
+                }
+
+                c.setRevSpeed(CarSpeedDao.getInstance().getRevSpeedByCarNum(db, c.getCarNum()));
+                c.setDriSpeed(CarSpeedDao.getInstance().getDriSpeedByCarNum(db, c.getCarNum()));
+
+
 
 
 
