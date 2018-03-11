@@ -4,7 +4,7 @@ package com.nev.domain;
  * Created by Administrator on 2018/3/6.
  */
 
-public class Car {
+public class CarInfo {
     private String carNum;
     private String carBrand;
     private double carryingCapacity;
@@ -24,6 +24,7 @@ public class Car {
     private boolean isCollision;
     private boolean isOverSpeed;
     private boolean isOverload;
+    private String motorcadeNum;
 
     public String getCarNum() {
         return carNum;
@@ -177,7 +178,18 @@ public class Car {
         isOverload = overload;
     }
 
-    public Car(String carNum, String carBrand, double carryingCapacity, String dateManu, int driverNum, boolean isBreakdown, double carLng, double carLat, boolean isCarLock, boolean isSeatLock, boolean isSafetyBelt, boolean isHandBraking, double revSpeed, double driSpeed, boolean isAlarm, boolean isPeccancy, boolean isCollision, boolean isOverSpeed, boolean isOverload) {
+    public String getMotorcadeNum() {
+        return motorcadeNum;
+    }
+
+    public void setMotorcadeNum(String motorcadeNum) {
+        this.motorcadeNum = motorcadeNum;
+    }
+
+    public CarInfo() {
+    }
+
+    public CarInfo(String carNum, String carBrand, double carryingCapacity, String dateManu, int driverNum, boolean isBreakdown, double carLng, double carLat, boolean isCarLock, boolean isSeatLock, boolean isSafetyBelt, boolean isHandBraking, double revSpeed, double driSpeed, boolean isAlarm, boolean isPeccancy, boolean isCollision, boolean isOverSpeed, boolean isOverload, String motorcadeNum) {
         this.carNum = carNum;
         this.carBrand = carBrand;
         this.carryingCapacity = carryingCapacity;
@@ -197,14 +209,12 @@ public class Car {
         this.isCollision = isCollision;
         this.isOverSpeed = isOverSpeed;
         this.isOverload = isOverload;
-    }
-
-    public Car() {
+        this.motorcadeNum = motorcadeNum;
     }
 
     @Override
     public String toString() {
-        return "Car{" +
+        return "CarInfo{" +
                 "carNum='" + carNum + '\'' +
                 ", carBrand='" + carBrand + '\'' +
                 ", carryingCapacity=" + carryingCapacity +
@@ -224,6 +234,7 @@ public class Car {
                 ", isCollision=" + isCollision +
                 ", isOverSpeed=" + isOverSpeed +
                 ", isOverload=" + isOverload +
+                ", motorcadeNum='" + motorcadeNum + '\'' +
                 '}';
     }
 }

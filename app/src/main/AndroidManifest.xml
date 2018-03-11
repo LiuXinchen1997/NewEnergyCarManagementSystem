@@ -5,6 +5,16 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
 
     <application
         android:allowBackup="true"
@@ -12,6 +22,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="aS68f1ezrrxVZbMGGoLKG3x7HxYmmv7p" />
+
         <activity
             android:name=".LoginActivity"
             android:label="@string/app_name">
@@ -21,6 +35,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote"></service>
+
+
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
@@ -38,14 +60,22 @@
             android:label="@string/title_activity_setting"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".CarActivity"
-            android:label="@string/title_activity_car"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".PersonActivity"
             android:label="@string/title_activity_person"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".DemoActivity"></activity>
+
+        <activity android:name=".Car" />
+        <activity android:name=".CarList" />
+        <activity
+            android:name=".Information"
+            android:label="司机信息"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Carposition"
+            android:label="位置"
+            android:theme="@style/AppTheme.NoActionBar" />
+
     </application>
 
 </manifest>

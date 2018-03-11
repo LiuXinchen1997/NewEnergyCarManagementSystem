@@ -3,10 +3,9 @@ package com.nev.dao;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.nev.domain.Car;
+import com.nev.domain.CarInfo;
 import com.nev.domain.CarLocation;
 import com.nev.domain.CarMile;
-import com.nev.domain.Driver;
 import com.nev.utils.StringVal;
 
 import java.util.LinkedList;
@@ -27,12 +26,12 @@ public class CarDao {
         return dao;
     }
 
-    public static List<Car> findAll(SQLiteDatabase db) {
-        List<Car> list = new LinkedList<>();
+    public static List<CarInfo> findAll(SQLiteDatabase db) {
+        List<CarInfo> list = new LinkedList<>();
         Cursor cursor = db.query(TABLE, null, null, null, null, null, null);
         if (cursor.moveToFirst()) {
             do {
-                Car c = new Car();
+                CarInfo c = new CarInfo();
                 c.setCarNum(cursor.getString(cursor.getColumnIndex("carNum")));
                 c.setCarBrand(cursor.getString(cursor.getColumnIndex("carBrand")));
                 c.setCarryingCapacity(cursor.getDouble(cursor.getColumnIndex("carryingCapacity")));
@@ -75,6 +74,7 @@ public class CarDao {
                 c.setOverSpeed(CarOverSpeedDao.getInstance().isOverSpeedByCarNum(db, c.getCarNum()));
 
                 c.setOverload(CarOverLoadDao.getInstance().isOverLoadByCarNum(db, c.getCarNum()));
+                c.setMotorcadeNum(cursor.getString(cursor.getColumnIndex("motorcadeNum")));
 
                 list.add(c);
             } while (cursor.moveToNext());
@@ -84,9 +84,9 @@ public class CarDao {
         return list;
     }
 
-    public static Car findByCarNum(SQLiteDatabase db, String carNum) {
-        List<Car> cars = findAll(db);
-        for (Car c : cars) {
+    public static CarInfo findByCarNum(SQLiteDatabase db, String carNum) {
+        List<CarInfo> cars = findAll(db);
+        for (CarInfo c : cars) {
             if (c.getCarNum().equals(carNum)) {
                 return c;
             }

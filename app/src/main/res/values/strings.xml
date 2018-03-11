@@ -112,4 +112,16 @@
     <string name="title_activity_setting">个人设置</string>
     <string name="title_activity_car">车辆信息</string>
     <string name="title_activity_person">人员信息</string>
+
+    <string name="large_car">
+        "XX物流公司.\n\n"
+        "姓名.\n\n"
+        "吴师傅.\n\n"
+        "性别.\n\n"
+        "男.\n\n"
+        "工号.\n\n"
+        "240000001.\n\n"
+        "联系方式.\n\n"
+        "17730226546.\n\n"
+    </string>
 </resources>

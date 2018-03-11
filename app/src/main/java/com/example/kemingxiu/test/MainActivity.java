@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(MainActivity.this, BatteryActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_car) {
-            Intent intent = new Intent(MainActivity.this, CarActivity.class);
+            Intent intent = new Intent(MainActivity.this, Car.class);
             startActivity(intent);
         } else if (id == R.id.nav_person) {
             Intent intent = new Intent(MainActivity.this, PersonActivity.class);

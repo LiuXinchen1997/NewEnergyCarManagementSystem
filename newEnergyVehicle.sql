@@ -3,10 +3,17 @@ CREATE TABLE `carInfo`(
   `carBrand` text NOT NULL,
   `carryingCapacity` real default 0.00,
   `dateManu` text NOT NULL,
-  `driverNum` integer NOT NULL
+  `driverNum` integer NOT NULL,
+  `motorcadeNum` text NOT NULL
 );
 
-insert into carInfo(carNum,carBrand,carryingCapacity,dateManu,driverNum)values('a','a',0.2,'2012-02-03 00:00:00',111);
+insert into carInfo(carNum,carBrand,carryingCapacity,dateManu,driverNum,motorcadeNum)values('0001','A000001',0.2,'2017-02-03 00:00:00',111);
+insert into carInfo(carNum,carBrand,carryingCapacity,dateManu,driverNum,motorcadeNum)values('0002','A022272',0.2,'2017-05-01 00:00:00',111);
+insert into carInfo(carNum,carBrand,carryingCapacity,dateManu,driverNum,motorcadeNum)values('0003','A153551',0.2,'2017-02-05 00:00:00',111);
+insert into carInfo(carNum,carBrand,carryingCapacity,dateManu,driverNum,motorcadeNum)values('0004','A107001',0.2,'2017-02-07 00:00:00',111);
+insert into carInfo(carNum,carBrand,carryingCapacity,dateManu,driverNum,motorcadeNum)values('0005','A779812',0.2,'2017-10-03 00:00:00',111);
+insert into carInfo(carNum,carBrand,carryingCapacity,dateManu,driverNum,motorcadeNum)values('0006','A234151',0.2,'2017-11-11 00:00:00',111);
+
 
 CREATE TABLE `carStatus`(
   `carSId` integer PRIMARY KEY autoincrement,
@@ -195,6 +202,12 @@ CREATE TABLE `carTeamInfo`(
   `captainNum` text NOT NULL,
   `motorcadeMount` integer NOT NULL
 );
+
+insert into carInfo(motorcadeId,motorcadeNum,captainNum,motorcadeMount)values('0001','A000001',0.2,'2017-02-03 00:00:00',111);
+
+
+
+
 
 CREATE TABLE `adminInfo`(
   `adminId` integer PRIMARY KEY autoincrement,
