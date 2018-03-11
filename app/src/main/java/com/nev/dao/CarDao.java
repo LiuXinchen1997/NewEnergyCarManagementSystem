@@ -66,18 +66,20 @@ public class CarDao {
                 c.setRevSpeed(CarSpeedDao.getInstance().getRevSpeedByCarNum(db, c.getCarNum()));
                 c.setDriSpeed(CarSpeedDao.getInstance().getDriSpeedByCarNum(db, c.getCarNum()));
 
+                c.setAlarm(CarWarningDao.getInstance().isAlarmByCarNum(db, c.getCarNum()));
 
+                c.setPeccancy(CarPeccancyDao.getInstance().isPeccancyByCarNum(db, c.getCarNum()));
 
+                c.setCollision(CarCollisionDao.getInstance().isCollisionByCarNum(db, c.getCarNum()));
 
+                c.setOverSpeed(CarOverSpeedDao.getInstance().isOverSpeedByCarNum(db, c.getCarNum()));
 
-
-
+                c.setOverload(CarOverLoadDao.getInstance().isOverLoadByCarNum(db, c.getCarNum()));
 
                 list.add(c);
             } while (cursor.moveToNext());
         }
         cursor.close();
-
 
         return list;
     }
