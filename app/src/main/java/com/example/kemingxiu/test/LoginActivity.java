@@ -101,17 +101,16 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 String name = mEmailView.getText().toString();
                 String password = mPasswordView.getText().toString();
 
-                /*
                 if (AdminService.getInstance().login(db, name, password)) {
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     Toast.makeText(LoginActivity.this, "登录成功！", Toast.LENGTH_SHORT).show();
                     startActivity(intent);
                 } else {
                     Toast.makeText(LoginActivity.this, "用户名或密码错误！", Toast.LENGTH_SHORT).show();
-                }*/
+                }
 
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
+                // Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                // startActivity(intent);
             }
         });
 

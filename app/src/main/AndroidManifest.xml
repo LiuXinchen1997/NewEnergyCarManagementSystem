@@ -15,7 +15,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -36,12 +35,10 @@
             </intent-filter>
         </activity>
 
-
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
-            android:process=":remote"></service>
-
+            android:process=":remote" />
 
         <activity
             android:name=".MainActivity"
@@ -63,8 +60,7 @@
             android:name=".PersonActivity"
             android:label="@string/title_activity_person"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".DemoActivity"></activity>
-
+        <activity android:name=".DemoActivity" />
         <activity android:name=".Car" />
         <activity android:name=".CarList" />
         <activity
@@ -75,13 +71,16 @@
             android:name=".Carposition"
             android:label="车辆位置"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity android:name=".DriverList" />
         <activity
             android:name=".personInformation"
-            android:label="员工详情"
+            android:label="司机详情"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".BatteryList" />
+        <activity
+            android:name=".BatteryInformation"
+            android:label="电池详情"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-
     </application>
 
 </manifest>

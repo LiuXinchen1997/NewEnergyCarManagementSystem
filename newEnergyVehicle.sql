@@ -139,6 +139,16 @@ CREATE TABLE `batteryInfo`(
   `carNum` text NOT NULL
 );
 
+insert into batteryInfo(batteryNum,batteryBrand,batteryVersion,carNum) values('0001','A0001','A0001','001');
+insert into batteryInfo(batteryNum,batteryBrand,batteryVersion,carNum) values('0002','A0002','A0002','002');
+insert into batteryInfo(batteryNum,batteryBrand,batteryVersion,carNum) values('0003','A0003','A0003','007');
+insert into batteryInfo(batteryNum,batteryBrand,batteryVersion,carNum) values('0005','A0005','A0005','015');
+insert into batteryInfo(batteryNum,batteryBrand,batteryVersion,carNum) values('0007','A0007','A0007','017');
+insert into batteryInfo(batteryNum,batteryBrand,batteryVersion,carNum) values('0008','A0008','A0008','019');
+insert into batteryInfo(batteryNum,batteryBrand,batteryVersion,carNum) values('0010','A0010','A0010','101');
+insert into batteryInfo(batteryNum,batteryBrand,batteryVersion,carNum) values('0012','A0012','A0012','034');
+insert into batteryInfo(batteryNum,batteryBrand,batteryVersion,carNum) values('0015','A0015','A0015','089');
+
 CREATE TABLE `batteryWarning`(
   `batteryId` integer PRIMARY KEY autoincrement,
   `batteryNum` text NOT NULL,
