@@ -139,18 +139,14 @@ public class MainActivity extends AppCompatActivity
         });
 
 
-
-
-
-
-
-
         //四个按钮函数
         ImageButton imageButton1 = (ImageButton) findViewById(R.id.imageButton2);
         imageButton1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                String name = getIntent().getStringExtra("adminName");
                 Intent intent = new Intent(MainActivity.this, PersonalInfoActivity.class);
+                intent.putExtra("adminName", name);
                 startActivity(intent);
             }
         });
@@ -158,7 +154,7 @@ public class MainActivity extends AppCompatActivity
         imageButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, BatteryActivity.class);
+                Intent intent = new Intent(MainActivity.this, BatteryList.class);
                 startActivity(intent);
             }
         });
@@ -178,12 +174,6 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intent);
             }
         });
-
-
-
-
-
-
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
