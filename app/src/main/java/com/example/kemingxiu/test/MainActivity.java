@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -28,12 +29,16 @@ import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private static final String TAG = "MainActivity";
+
     private List<news> newsList = new ArrayList<>();
     private ViewPager mViewPaper;
     private List<ImageView> images;
@@ -60,12 +65,33 @@ public class MainActivity extends AppCompatActivity
     private TextView title;
     private ViewPagerAdapter adapter;
     private ScheduledExecutorService scheduledExecutorService;
+
+    private void initNews() {
+        for(int i = 0;i < 2;i++){
+            news news1 = new news(R.drawable.car,"新能源汽车新政策出台！！！");
+            newsList.add(news1);
+            news news2 = new news(R.drawable.nianhui,"2018公司年会");
+            newsList.add(news2);
+            news news3 = new news(R.drawable.baobiao,"2017年度报表");
+            newsList.add(news3);
+            news news4 = new news(R.drawable.zhaoping,"2018,期待你的加入！");
+            newsList.add(news4);
+            news news5 = new news(R.drawable.hezuo,"强强联手，公司与国外企业合作指导文件签署");
+            newsList.add(news5);
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        initNews();
+        NewsAdapter adapter1 = new NewsAdapter(MainActivity.this,R.layout.news_item,newsList);
+        ListView listView = (ListView) findViewById(R.id.list_view1);
+        listView.setAdapter(adapter1);
 
         mViewPaper = (ViewPager) findViewById(R.id.vp);
 
@@ -91,8 +117,6 @@ public class MainActivity extends AppCompatActivity
         mViewPaper.setAdapter(adapter);
 
         mViewPaper.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-
-
             @Override
             public void onPageSelected(int position) {
                 title.setText(titles[position]);
@@ -113,6 +137,53 @@ public class MainActivity extends AppCompatActivity
 
             }
         });
+
+
+
+
+
+
+
+
+        //四个按钮函数
+        ImageButton imageButton1 = (ImageButton) findViewById(R.id.imageButton2);
+        imageButton1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PersonalInfoActivity.class);
+                startActivity(intent);
+            }
+        });
+        ImageButton imageButton2 = (ImageButton) findViewById(R.id.imageButton3);
+        imageButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BatteryActivity.class);
+                startActivity(intent);
+            }
+        });
+        ImageButton imageButton3 = (ImageButton) findViewById(R.id.imageButton4);
+        imageButton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Car.class);
+                startActivity(intent);
+            }
+        });
+        ImageButton imageButton4 = (ImageButton) findViewById(R.id.imageButton5);
+        imageButton4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,DriverList.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
