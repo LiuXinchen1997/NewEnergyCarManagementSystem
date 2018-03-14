@@ -246,6 +246,10 @@ CREATE TABLE `adminInfo`(
   `adminPhone` text NOT NULL
 );
 
+
+
+
+
 CREATE TABLE `companyInfo`(
   `companyId` integer PRIMARY KEY autoincrement,
   `companyNum` text NOT NULL,

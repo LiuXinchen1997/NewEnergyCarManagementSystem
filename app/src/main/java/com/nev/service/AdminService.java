@@ -22,7 +22,7 @@ public class AdminService {
 
     public static boolean login(SQLiteDatabase db, String name, String password) {
         AdminDao dao = AdminDao.getInstance();
-        if (null == dao.findByName(db, name, password)) {
+        if (null == dao.findByNameAndPwd(db, name, password)) {
             return false;
         } else {
             return true;

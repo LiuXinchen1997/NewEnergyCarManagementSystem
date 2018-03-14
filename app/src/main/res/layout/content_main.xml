@@ -14,7 +14,8 @@
     tools:showIn="@layout/app_bar_main">
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="200dip" >
+        android:layout_height="200dip"
+        android:id="@+id/frameLayout">
 
         <android.support.v4.view.ViewPager
             android:id="@+id/vp"
@@ -95,6 +96,92 @@
         android:layout_alignRight="@+id/textView2"
         android:layout_alignEnd="@+id/textView2"
         android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:text="个人信息"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView15"
+        android:layout_below="@+id/imageButton2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="车辆信息"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView16"
+        android:layout_alignLeft="@+id/imageButton4"
+        android:layout_alignStart="@+id/imageButton4"
+        android:id="@+id/textView17" />
+
+    <TextView
+        android:text="电池信息"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView16"
+        android:layout_below="@+id/imageButton3"
+        android:layout_alignLeft="@+id/imageButton3"
+        android:layout_alignStart="@+id/imageButton3" />
+
+    <TextView
+        android:text="人员信息"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageButton5"
+        android:layout_alignLeft="@+id/imageButton5"
+        android:layout_alignStart="@+id/imageButton5"
+        android:id="@+id/textView18" />
+
+    <ListView
+        android:id="@+id/list_view1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textView15"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="25dp" >
+
+        </ListView>
+
+    <ImageButton
+        android:layout_width="68dp"
+        android:layout_height="60dp"
+        app:srcCompat="@drawable/ic_menu_gallery"
+        android:id="@+id/imageButton3"
+        android:layout_alignTop="@+id/imageButton2"
+        android:layout_toRightOf="@+id/textView12"
+        android:layout_toEndOf="@+id/textView12" />
+
+    <ImageButton
+        android:layout_width="68dp"
+        android:layout_height="60dp"
+        app:srcCompat="@drawable/ic_menu_manage"
+        android:id="@+id/imageButton5"
+        android:layout_alignTop="@+id/imageButton4"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageButton
+        android:layout_width="68dp"
+        android:layout_height="60dp"
+        app:srcCompat="@drawable/ic_menu_camera"
+        android:layout_marginTop="36dp"
+        android:id="@+id/imageButton2"
+        android:layout_below="@+id/frameLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:layout_width="68dp"
+        android:layout_height="60dp"
+        app:srcCompat="@drawable/ic_menu_slideshow"
+        android:id="@+id/imageButton4"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_above="@+id/textView17"
+        android:layout_toRightOf="@+id/imageButton3"
+        android:layout_toEndOf="@+id/imageButton3" />
 
 
 </RelativeLayout>

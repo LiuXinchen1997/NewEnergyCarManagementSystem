@@ -34,9 +34,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-
-
+    private List<news> newsList = new ArrayList<>();
     private ViewPager mViewPaper;
     private List<ImageView> images;
     private List<View> dots;
@@ -174,7 +172,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_personal_info) {
+            String name = getIntent().getStringExtra("adminName");
             Intent intent = new Intent(MainActivity.this, PersonalInfoActivity.class);
+            intent.putExtra("adminName", name);
             startActivity(intent);
         } else if (id == R.id.nav_battery) {
             Intent intent = new Intent(MainActivity.this, BatteryList.class);

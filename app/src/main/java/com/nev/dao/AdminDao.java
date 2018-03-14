@@ -20,9 +20,27 @@ public class AdminDao {
 
     private static final String TABLE = "adminInfo";
 
-    public static Admin findByName(SQLiteDatabase db, String name, String password) {
+    public static Admin findByNameAndPwd(SQLiteDatabase db, String name, String password) {
         Admin admin = null;
         Cursor cursor = db.query(TABLE, null, "adminName = ? and adminPass = ?", new String[] {name, password}, null, null, null);
+        if (cursor.moveToFirst()) {
+            admin = new Admin();
+            admin.setAdminAccount(cursor.getString(cursor.getColumnIndex("adminAccount")));
+            admin.setAdminId(cursor.getInt(cursor.getColumnIndex("adminId")));
+            admin.setAdminName(cursor.getString(cursor.getColumnIndex("adminName")));
+            admin.setAdminNum(cursor.getString(cursor.getColumnIndex("adminNum")));
+            admin.setAdminPass(cursor.getString(cursor.getColumnIndex("adminPass")));
+            admin.setAdminPhone(cursor.getString(cursor.getColumnIndex("adminPhone")));
+        }
+        cursor.close();
+
+        return admin;
+    }
+
+    public static Admin findByName(SQLiteDatabase db, String name) {
+        Admin admin = null;
+        Cursor cursor = db.query(TABLE, null, "adminName = ?", new String[] {name}, null, null, null);
+
         if (cursor.moveToFirst()) {
             admin = new Admin();
             admin.setAdminAccount(cursor.getString(cursor.getColumnIndex("adminAccount")));
