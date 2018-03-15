@@ -80,6 +80,10 @@
         <activity
             android:name=".BatteryInformation"
             android:label="电池详情"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ModifyPasswordActivity"
+            android:label="@string/title_activity_modify_password"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import com.example.kemingxiu.test.LoginActivity;
 import com.nev.dao.AdminDao;
 import com.nev.dao.DatabaseBuildHelper;
+import com.nev.domain.Admin;
 
 /**
  * Created by Administrator on 2018/3/10.
@@ -27,5 +28,15 @@ public class AdminService {
         } else {
             return true;
         }
+    }
+
+    public static boolean modifyPassword(SQLiteDatabase db, String adminNum, String newPwd) {
+        Admin admin = AdminDao.getInstance().findByNum(db, adminNum);
+        if (admin == null) {
+            return false;
+        }
+
+        AdminDao.getInstance().updatePassword(db, adminNum, newPwd);
+        return true;
     }
 }

@@ -83,6 +83,12 @@ public class AdminDao {
         values.put("adminAccount", admin.getAdminAccount());
 
         db.update(TABLE, values, "adminNum = ?", new String[] { admin.getAdminNum() });
-        Log.e(TAG, "updateAdmin: !!!");
+    }
+
+    public static void updatePassword(SQLiteDatabase db, String adminNum, String password) {
+        ContentValues values = new ContentValues();
+        values.put("adminPass", password);
+
+        db.update(TABLE, values, "adminNum = ?", new String[] {adminNum});
     }
 }

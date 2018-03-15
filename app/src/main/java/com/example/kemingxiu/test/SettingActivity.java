@@ -79,6 +79,15 @@ public class SettingActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
 
+        btn_modifypwd = findViewById(R.id.button_modifypwd);
+        btn_modifypwd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SettingActivity.this, ModifyPasswordActivity.class);
+                intent.putExtra("adminNum", adminNum);
+                startActivity(intent);
+            }
+        });
+    }
 }

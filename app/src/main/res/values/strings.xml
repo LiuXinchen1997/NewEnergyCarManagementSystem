@@ -125,4 +125,5 @@
         "17730226546.\n\n"
     </string>
     <string name="title_activity_battery_information">BatteryInformation</string>
+    <string name="title_activity_modify_password">修改密码</string>
 </resources>
