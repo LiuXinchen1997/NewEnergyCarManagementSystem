@@ -32,6 +32,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.nev.dao.AdminDao;
 import com.nev.dao.DatabaseBuildHelper;
 import com.nev.service.AdminService;
 
@@ -104,6 +105,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 if (AdminService.getInstance().login(db, name, password)) {
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     intent.putExtra("adminName", name);
+                    intent.putExtra("adminNum", AdminDao.getInstance().findByName(db, name).getAdminNum());
                     Toast.makeText(LoginActivity.this, "登录成功！", Toast.LENGTH_SHORT).show();
                     startActivity(intent);
                 } else {

@@ -247,11 +247,15 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(MainActivity.this, DriverList.class);
             startActivity(intent);
         } else if (id == R.id.nav_share) {
-            Intent intent = new Intent(MainActivity.this, DemoActivity.class);
-            startActivity(intent);
+            // Intent intent = new Intent(MainActivity.this, DemoActivity.class);
+            // startActivity(intent);
             Toast.makeText(this, "分享成功！", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_setting) {
+            String name = getIntent().getStringExtra("adminName");
+            String adminNum = getIntent().getStringExtra("adminNum");
             Intent intent = new Intent(MainActivity.this, SettingActivity.class);
+            intent.putExtra("adminName", name);
+            intent.putExtra("adminNum", adminNum);
             startActivity(intent);
         } else if (id == R.id.nav_logout) {
             Toast.makeText(this, "退出成功！", Toast.LENGTH_SHORT).show();
